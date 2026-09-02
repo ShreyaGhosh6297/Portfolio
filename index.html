@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Italianno&family=Montserrat:ital@0;1&display=swap" rel="stylesheet">
+
+    <!-- Devicons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+</head>
+
+<body>
+    <canvas id="particles"></canvas>
+    <!-- Navbar -->
+
+    <header>
+
+        <div class="logo">Shreya Ghosh</div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skill">Skills</a>
+            <a href="#work">Work</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+    </header>
+
+    <!-- Hero Section -->
+
+    <section id="home" class="hero">
+
+        <div class="hero-left">
+            <img src="BG.png" alt="profile">
+        </div>
+
+    <div class="hero-right">
+        <h1>My <br> Portfolio</h1>
+        <p>Building modern, responsive, and user-friendly web experiences.</p><br>
+
+        <div class="buttons">
+            <a href="Updated_Resume_Shreya Ghosh.pdf" download="My_Resume.pdf" class="cv-btn">
+                Download CV
+            </a>
+        </div>
+    </div>
+
+    </section>
+
+    <!-- About Section -->
+
+    <section id="about" class="about">
+
+    <div class="about-left">
+        <h2>Introduction</h2>
+        <p>
+            I am Shreya Ghosh, a Web Developer<br>
+            with a strong foundation in Data Structures and Algorithms,<br>
+            Object-Oriented Programming, and modern web technologies.<br>
+            I have hands-on experience in building responsive and interactive web applications.<br>
+            I am passionate about writing clean, efficient code and solving real-world problems.
+        </p>
+
+        <div class="about-grid">
+            <div>
+                <h3>About Me</h3>
+                <p>
+                    I am pursuing B.Tech in Computer Science and Engineering from 
+                    Academy of Technology, Hooghly (CGPA 7.60). Skilled in C, Java, Python,
+                    and web technologies like HTML, CSS, JavaScript, and React.
+                </p>
+            </div>
+
+            <div>
+                <h3>About Portfolio</h3>
+                <p>
+                    A collection of my projects showcasing front-end development,
+                    problem-solving, and clean UI design.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="about-right">
+        <img src="Front.jpeg" alt="about image">
+    </div>
+
+    </section>
+
+    <!-- Skills Section -->
+
+    <section id="skill" class="skill-section">
+        <h2>My Skills</h2>
+
+    <div class="skills-container">
+        <span class="skill"><i class="devicon-c-plain colored"></i> C</span>
+        <span class="skill"><i class="devicon-python-plain colored"></i> Python</span>
+        <span class="skill"><i class="devicon-java-plain colored"></i> Java</span>
+        <span class="skill"><i class="devicon-html5-plain colored"></i> HTML</span>
+        <span class="skill"><i class="devicon-css3-plain colored"></i> CSS</span>
+        <span class="skill"><i class="devicon-javascript-plain colored"></i> JavaScript</span>
+        <span class="skill"><i class="devicon-react-original colored"></i> React</span>
+        <span class="skill"><i class="devicon-figma-plain colored"></i> Figma</span>
+        <span class="skill"><i class="devicon-git-plain colored"></i> Git</span>
+        <span class="skill"><i class="devicon-github-original"></i> GitHub</span>
+        <span class="skill"><i class="devicon-jenkins-plain colored"></i> Jenkins</span>
+        <span class="skill"><i class="devicon-githubactions-plain colored"></i> CI/CD</span>
+    </div>
+
+    </section>
+
+    <!-- Work Section -->
+
+    <section id="work" class="work">
+        <h2>My Projects</h2>
+
+    <div class="projects-container">
+
+        <!-- Project 1 -->
+        <div class="project-card">
+            <img src="Rock_Paper_Scissors_Game.png" alt="project">
+
+            <div class="project-content">
+                <h3>Rock Paper Scissors</h3>
+                <p class="tech">HTML • CSS • JavaScript</p>
+
+                <div class="project-links">
+                    <a href="https://github.com/ShreyaGhosh6297/Rock-Paper-Scissors-Game.git" target="_blank">GitHub</a>
+                    <a href="https://shreyaghosh6297.github.io/Rock-Paper-Scissors-Game/" target="_blank">Live</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card">
+            <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7" alt="project">
+
+            <div class="project-content">
+                <h3>Local Problem Reporter</h3>
+                <p class="tech">HTML • CSS • JavaScript</p>
+
+                <div class="project-links">
+                    <a href="#" onclick="comingSoon(event)">GitHub</a>
+                    <a href="#" onclick="comingSoon(event)">Live</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card">
+            <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29" alt="project">
+
+            <div class="project-content">
+                <h3>Portfolio Website</h3>
+                <p class="tech">HTML • CSS • JavaScript</p>
+
+                <div class="project-links">
+                    <a href="#" onclick="comingSoon(event)">GitHub</a>
+                    <a href="#" onclick="comingSoon(event)">Live</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    </section>
+
+    <!-- Contact Section -->
+
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <p>Let’s connect and build something amazing</p>
+
+        <div class="contact-box">
+
+            <!-- LEFT: Social Icons -->
+            <div class="contact-left">
+                <h3>Connect with me</h3>
+
+                <div class="social-icons">
+                    <a href="mailto:shreyag7797@gmail.com" target="_blank">
+                        <i class="devicon-google-plain colored"></i>
+                        <span>Email</span>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/shreya-ghosh-272ba828a?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank">
+                        <i class="devicon-linkedin-plain colored"></i>
+                        <span>LinkedIn</span>
+                    </a>
+
+                    <a href="https://github.com/ShreyaGhosh6297" target="_blank">
+                        <i class="devicon-github-original"></i>
+                        <span>GitHub</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- RIGHT: Contact Form -->
+            <div class="contact-right">
+                <form class="contact-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea rows="5" placeholder="Your Message" required></textarea>
+
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- JS -->
+
+    <script src="script.js"></script>
+
+</body>
+</html>
