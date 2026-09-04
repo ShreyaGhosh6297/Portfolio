@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="contact.css">
+    <!-- Google Fonts - Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Devicons (for the social icons) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
+    <!-- Remix Icon (for UI icons like the paper plane) -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Contact Section - Glassmorphism UI -->
+<section id="contact" class="contact">
+    <div class="contact-header">
+        <h2>Contact Me</h2>
+        <p class="contact-subtitle">Let's connect and build something amazing together.</p>
+    </div>
+
+    <div class="contact-box-container">
+        <!-- Main Glassmorphic Container -->
+        <div class="contact-box">
+
+            <!-- LEFT SIDE (Connect Details) -->
+            <div class="contact-left">
+                
+                <!-- 1. My Details Glass Card -->
+                <div class="glass-card my-details">
+                    <div class="card-title">
+                        <i class="ri-user-smile-line card-icon"></i>
+                        My Details
+                    </div>
+                    <div class="details-content">
+                        <div class="detail-item">
+                            <i class="ri-mail-line detail-icon"></i>
+                            <div class="detail-info">
+                                <span class="label">Direct Email</span>
+                                <a href="mailto:shreyag7797@gmail.com" class="value link">
+                                    shreyag7797@gmail.com
+                                </a>
+                            </div>
+                            <button class="copy-btn tooltip" onclick="copyEmail()">
+                                <i class="ri-file-copy-line"></i>
+                                <span class="tooltiptext">Copy Email</span>
+                            </button>
+                        </div>
+                        <div class="detail-item">
+                            <i class="ri-map-pin-line detail-icon"></i>
+                            <div class="detail-info">
+                                <span class="label">Location</span>
+                                <span class="value">India</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Connect With Me Glass Card -->
+                <div class="glass-card connect-with-me">
+                    <div class="card-title">Connect with me</div>
+                    <div class="social-links-grid">
+                        <a href="https://google.com" target="_blank" class="social-link tooltip">
+                            <i class="devicon-google-plain colored"></i>
+                            <span class="tooltiptext">Google</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/shreya-ghosh-272ba828a" target="_blank" class="social-link tooltip">
+                            <i class="devicon-linkedin-plain colored"></i>
+                            <span class="tooltiptext">LinkedIn</span>
+                        </a>
+                        <a href="https://github.com/ShreyaGhosh6297" target="_blank" class="social-link tooltip">
+                            <i class="devicon-github-original"></i>
+                            <span class="tooltiptext">GitHub</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT SIDE (Advanced Form) -->
+            <div class="contact-right">
+                <form class="advanced-contact-form">
+                    
+                    <!-- Row 1: Name & Email -->
+                    <div class="form-row two-cols">
+                        <div class="input-group">
+                            <input type="text" id="name" required placeholder=" ">
+                            <label for="name">Your Name</label>
+                        </div>
+                        <div class="input-group">
+                            <input type="email" id="email" required placeholder=" ">
+                            <label for="email">Your Email</label>
+                        </div>
+                    </div>
+
+                    <!-- Row 2: Company Name -->
+                    <div class="form-row">
+                        <div class="input-group full-width has-icon">
+                            <i class="ri-building-line input-icon"></i>
+                            <input type="text" id="company" required placeholder=" ">
+                            <label for="company">Company Name</label>
+                        </div>
+                    </div>
+
+                    <!-- Row 3: Project Type & Timeline -->
+                    <div class="form-row two-cols">
+                        <div class="input-group dropdown">
+                            <select id="project-type" required>
+                                <option value="" disabled selected hidden></option>
+                                <option value="web-design">Web Design</option>
+                                <option value="frontend-dev">Frontend Development</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <label for="project-type">Project Type</label>
+                            <i class="ri-arrow-down-s-line dropdown-arrow"></i>
+                        </div>
+                        <div class="input-group has-icon">
+                            <i class="ri-calendar-event-line input-icon"></i>
+                            <input type="text" id="timeline" required placeholder=" ">
+                            <label for="timeline">Estimated Timeline</label>
+                        </div>
+                    </div>
+
+                    <!-- Row 4: Attach File & Message -->
+                    <div class="form-row upload-and-message">
+                        
+                        <!-- Upload File Glass Block -->
+                        <div class="file-upload-block">
+                            <input type="file" id="file-upload" class="file-input" onchange="updateFileName()">
+                            <label for="file-upload" class="upload-label">
+                                <span class="label-text">Attach File (optional)</span>
+                                <div class="upload-area">
+                                    <i class="ri-cloud-fill upload-icon"></i>
+                                    <span class="filename" id="file-name">No file chosen</span>
+                                </div>
+                            </label>
+                        </div>
+
+                        <!-- Message Block -->
+                        <div class="message-block">
+                            <div class="input-group full-height">
+                                <textarea id="message" rows="4" required placeholder=" "></textarea>
+                                <label for="message">Your Message</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Row 5: Send Message Button -->
+                    <div class="form-row submit-row">
+                        <button type="submit" class="send-message-btn">
+                            Send Message
+                            <i class="ri-send-plane-fill"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

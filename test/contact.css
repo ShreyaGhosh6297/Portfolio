@@ -1,0 +1,605 @@
+/* --- RESET & VARIABLES --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: #0d1117; /* Matches the dark background in image_8.png */
+    color: #c9d1d9;
+    line-height: 1.6;
+}
+
+:root {
+    --text-primary: #ffffff;
+    --text-secondary: #8b949e;
+    --text-link: #58a6ff;
+    --cyan-border: #38bdf8;
+    --glass-bg: rgba(22, 27, 34, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.08);
+}
+
+/* --- CONTACT SECTION MAIN --- */
+.contact {
+    padding: 100px 80px;
+    position: relative;
+    background: #0d1117;
+    overflow: hidden;
+}
+
+/* Particles effect (keep your existing canvas, this is just a subtle fallback) */
+.contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(#1f2937 1px, transparent 1px);
+    background-size: 30px 30px;
+    opacity: 0.3;
+    z-index: 0;
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+    z-index: 1;
+}
+
+.contact-header h2 {
+    font-size: 38px;
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+.contact-subtitle {
+    color: var(--text-secondary);
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.contact-box-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* --- MAIN GLASS BOX --- */
+.contact-box {
+    display: flex;
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 30px;
+    gap: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* --- LEFT COLUMN: DETAILS --- */
+.contact-left {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 25px;
+}
+
+.my-details .card-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-primary);
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.card-icon {
+    font-size: 22px;
+}
+
+.details-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+}
+
+.detail-icon {
+    font-size: 18px;
+    color: var(--text-secondary);
+    width: 20px;
+    text-align: center;
+}
+
+.detail-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.detail-info .label {
+    color: var(--text-secondary);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.detail-info .value {
+    color: var(--text-primary);
+    font-size: 14px;
+    word-break: break-word;
+}
+
+.detail-info .value.link {
+    color: var(--text-link);
+    text-decoration: none;
+}
+
+.detail-info .value.link:hover {
+    text-decoration: underline;
+}
+
+.copy-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 14px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    padding: 2px 8px;
+}
+
+.copy-btn:hover {
+    color: var(--text-primary);
+}
+
+/* Connect With Me Card */
+.connect-with-me .card-title {
+    color: var(--text-primary);
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.social-links-grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 15px;
+}
+
+.social-link {
+    font-size: 24px;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 8px;
+    border-radius: 50%;
+}
+
+.social-link:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+/* Tooltip Generic Styles (can be moved up) */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 80px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -40px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 10px;
+    font-weight: 500;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* --- RIGHT COLUMN: ADVANCED FORM --- */
+.contact-right {
+    width: 65%;
+}
+
+.advanced-contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* --- Form Rows/Grid Layouts --- */
+.form-row {
+    display: flex;
+    gap: 12px;
+}
+
+.form-row.two-cols > .input-group {
+    width: calc(50% - 6px);
+}
+
+.upload-and-message {
+    height: 120px;
+}
+
+/* --- Input Groups & Styles --- */
+.input-group {
+    position: relative;
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+/* The complex border glow effect seen in the design */
+.input-group::after {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    width: calc(100% + 2px);
+    height: calc(100% + 2px);
+    border-radius: 8px;
+    border: 1px solid transparent;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.input-group:focus-within::after,
+.input-group:hover::after {
+    border-image: linear-gradient(135deg, var(--cyan-border), #0284c7) 1;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: xor;
+    -webkit-mask-composite: xor;
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.2);
+}
+
+.input-group input,
+.input-group textarea,
+.input-group select {
+    width: 100%;
+    padding: 18px 15px 8px;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    color: var(--text-primary);
+    font-family: inherit;
+    font-size: 13px;
+    outline: none;
+}
+
+.input-group label {
+    position: absolute;
+    left: 15px;
+    top: 18px;
+    color: var(--text-secondary);
+    font-size: 13px;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+/* Special icons within input fields */
+.input-group.has-icon input {
+    padding-left: 45px;
+}
+
+.input-group.has-icon label {
+    left: 45px;
+}
+
+.input-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-secondary);
+    font-size: 16px;
+    pointer-events: none;
+}
+
+/* Textarea tweaks */
+.input-group textarea {
+    padding-top: 25px;
+    resize: none;
+}
+
+.input-group textarea + label {
+    top: 10px;
+}
+
+.full-height {
+    height: 100%;
+}
+
+/* --- Floating Input Label Trigger --- */
+.input-group input:focus ~ label,
+.input-group input:not(:placeholder-shown) ~ label,
+.input-group textarea:focus ~ label,
+.input-group textarea:not(:placeholder-shown) ~ label,
+.input-group select:focus ~ label,
+.input-group select:not([value=""]):valid ~ label {
+    top: 4px;
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--cyan-border);
+}
+
+/* Specific select placeholder handling */
+.input-group select:not([value=""]) + label {
+    top: 4px;
+    font-size: 10px;
+}
+
+/* --- Dropdown Specific Styles --- */
+.input-group.dropdown {
+    display: flex;
+    align-items: center;
+}
+
+.input-group select {
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+
+.dropdown-arrow {
+    position: absolute;
+    right: 15px;
+    color: var(--text-secondary);
+    font-size: 16px;
+    pointer-events: none;
+}
+
+/* --- Custom File Upload Block --- */
+.file-upload-block {
+    width: 35%;
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.file-input {
+    display: none;
+}
+
+.upload-label {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.upload-label .label-text {
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 10px;
+}
+
+.upload-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.upload-label:hover .upload-area {
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.upload-icon {
+    font-size: 30px;
+    color: rgba(255, 255, 255, 0.15);
+}
+
+.filename {
+    font-size: 10px;
+    color: var(--text-secondary);
+    margin-top: 5px;
+    max-width: 90%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* --- Message Block Layout --- */
+.message-block {
+    width: 65%;
+    height: 100%;
+}
+
+/* --- Submit Button (Send Message) --- */
+.submit-row {
+    justify-content: flex-end;
+    margin-top: 15px;
+}
+
+.send-message-btn {
+    padding: 12px 25px;
+    border: 1px solid var(--cyan-border);
+    border-radius: 8px;
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.06), rgba(56, 189, 248, 0.12));
+    color: var(--cyan-border);
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 10px rgba(56, 189, 248, 0.1);
+}
+
+.send-message-btn:hover {
+    background: rgba(56, 189, 248, 0.18);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(56, 189, 248, 0.2);
+}
+
+.send-message-btn i {
+    font-size: 16px;
+    transition: transform 0.3s ease;
+}
+
+.send-message-btn:hover i {
+    transform: translate(2px, -2px);
+}
+
+/* --- RESPONSIVE DESIGN TWEAKS --- */
+@media (max-width: 1000px) {
+    header {
+        padding: 15px 40px;
+    }
+
+    .contact {
+        padding: 60px 40px;
+    }
+
+    .contact-box {
+        flex-direction: column-reverse;
+        padding: 20px;
+    }
+
+    .contact-left,
+    .contact-right {
+        width: 100%;
+    }
+
+    .social-links-grid {
+        justify-content: center;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-header h2 {
+        font-size: 30px;
+    }
+
+    .form-row.two-cols {
+        flex-direction: column;
+    }
+
+    .form-row.two-cols > .input-group {
+        width: 100%;
+    }
+
+    .upload-and-message {
+        height: auto;
+        flex-direction: column-reverse;
+    }
+
+    .file-upload-block,
+    .message-block {
+        width: 100%;
+    }
+
+    .file-upload-block {
+        height: 100px;
+    }
+
+    .message-block {
+        height: 120px;
+    }
+}
+/* --- Connect With Me Card --- */
+.connect-with-me .card-title {
+    color: var(--text-primary);
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.social-links-grid {
+    display: flex;
+    justify-content: center; /* Centered alignment */
+    gap: 30px; /* Balance spacing between circles */
+}
+
+.social-link {
+    font-size: 24px;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    
+    /* Perfect Circle Enforcement */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;  /* Set a fixed width */
+    height: 50px; /* Set the identical fixed height */
+    border-radius: 50%; /* Force circle shape */
+    
+    /* Default border state */
+    border: 1px solid transparent;
+}
+
+/* Base hover animation for all icons */
+.social-link:hover {
+    transform: translateY(-3px);
+}
+
+/* --- Brand Specific Social Icon Hover Colors --- */
+
+/* 1. Google Icon - Red/Orange Glow */
+.social-link:has(.devicon-google-plain):hover {
+    background: rgba(219, 68, 55, 0.1); 
+    border-color: rgba(219, 68, 55, 0.4);
+    box-shadow: 0 0 15px rgba(219, 68, 55, 0.3);
+}
+
+/* 2. LinkedIn Icon - Blue Glow */
+.social-link:has(.devicon-linkedin-plain):hover {
+    background: rgba(0, 119, 181, 0.1); 
+    border-color: rgba(0, 119, 181, 0.4);
+    box-shadow: 0 0 15px rgba(0, 119, 181, 0.3);
+}
+
+/* 3. GitHub Icon - Grey/White Glow */
+.social-link:has(.devicon-github-original):hover {
+    background: rgba(240, 246, 252, 0.08); 
+    border-color: rgba(240, 246, 252, 0.3);
+    box-shadow: 0 0 15px rgba(240, 246, 252, 0.2);
+}
